@@ -1,0 +1,20 @@
+-- CreateTable
+CREATE TABLE "Quiz" (
+    "slug" TEXT NOT NULL PRIMARY KEY,
+    "title" TEXT NOT NULL,
+    "question" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "userId" TEXT NOT NULL,
+    CONSTRAINT "Quiz_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Answer" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "userId" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "answer" TEXT NOT NULL,
+    "quizSlug" TEXT NOT NULL,
+    CONSTRAINT "Answer_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT "Answer_quizSlug_fkey" FOREIGN KEY ("quizSlug") REFERENCES "Quiz" ("slug") ON DELETE CASCADE ON UPDATE CASCADE
+);
