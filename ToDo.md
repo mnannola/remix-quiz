@@ -53,9 +53,13 @@ Friends then answer the quiz and see what other people answered.
 
 
 ## POC
-- [ ] Create Quiz Admin page
-- [ ] Create Quiz Admin / New page
-- [ ] Create Question/Slug page
-- [ ] Create Question/Slug/Results page
+- [x] Create Quiz Admin page
+- [x] Create Quiz Admin / New page
+- [x] Create Question/Slug page
+- [x] Create Question/Slug/Results page
+- [x] Remove Title from Quiz page to make it easier to create quizes
+- [ ] Instead of email, just have a user name
+- [x] Have login go right to admin page
+- [x] Create Header with app name (that goes to home page )and logout button
 
 
