@@ -1,12 +1,9 @@
-import { Link } from "@remix-run/react"
+import { redirect } from "@remix-run/node";
+
+export function loader() {
+    return redirect('/quiz/admin');
+}
 
 export default function QuizIndex() {
-    return (
-        <div>
-            <h3>Quiz Main Page</h3>
-            <Link to="admin" className="text-blue-500">
-                Admin
-            </Link>
-        </div>            
-    )
+    return(<></>);
 }

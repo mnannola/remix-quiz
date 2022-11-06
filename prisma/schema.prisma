@@ -41,7 +41,7 @@ model Note {
 
 model Quiz {
   slug      String @id @default(cuid())
-  title     String
+  title     String?
   question  String
 
   createdAt DateTime @default(now())

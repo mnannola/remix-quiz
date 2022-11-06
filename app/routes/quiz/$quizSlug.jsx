@@ -35,11 +35,11 @@ export async function action({ request, params }) {
 
 export default function QuizQuestion() {
     const data = useLoaderData();
+    const { quiz } = data;
 
     return (
         <div className="p-6">
-            <h3 className="text-2xl font-bold">{data.quiz.title}</h3>
-            <p className="py-6">{data.quiz.question}</p>
+            <h3 className="text-2xl font-bold">{quiz.question}</h3>            
             <Form
                 method="post"
                 className="flex flex-col p-3 gap-4 max-w-xl"
@@ -49,7 +49,7 @@ export default function QuizQuestion() {
                         <span>Answer: </span>
                         <input
                             name="answer"
-                            className="flex-1 rounded-md border-2 border-blue-500 px-2"
+                            className="flex-1 rounded-md border-2 border-blue-500 px-2 py-1 text-lg"
                         />
                     </label>
                 </div>

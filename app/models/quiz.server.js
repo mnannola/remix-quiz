@@ -1,10 +1,9 @@
 import { prisma } from "~/db.server";
 
-export function createQuiz({question, title, userId}) {
+export function createQuiz({question, userId}) {
     console.log('question: ', question);
     return prisma.quiz.create({
         data: {
-            title,
             question,
             userId
         }

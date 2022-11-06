@@ -12,8 +12,6 @@ export default function QuizAdminIndex() {
     const data = useLoaderData();
     return (
         <div className="p-4">
-            <h1>Quiz Admin Index</h1>
-
             <Link to="new" className="text-blue-500">+ New Quiz</Link>
             <div className="py-4">
                 {data.quizes.length === 0 ? (
@@ -22,36 +20,28 @@ export default function QuizAdminIndex() {
                         <table className="border-collapse table-auto w-full text-sm">
                             <thead>
                                 <tr>
-                                    <th className="border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
-                                    >
-                                        Title
-                                    </th>
-                                    <th className="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                                    <th className="border-b  font-medium p-4 pt-0 pb-3 text-slate-400 text-left"
                                     >
                                         Question
                                     </th>
-                                    <th className="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                                    <th className="border-b font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 text-left"
                                     >
                                         Link
                                     </th>
-                                    <th className="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left"
+                                    <th className="border-b font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 text-left"
                                     >
                                         Results
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody className="bg-white dark:bg-slate-800">
+                            <tbody className="bg-white">
                                 {data.quizes.map((quiz) => (
-                                    <tr key={quiz.slug}>
-                                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400"
-                                        >
-                                            {quiz.title}
-                                        </td>
-                                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400"
+                                    <tr key={quiz.slug}>                                        
+                                        <td className="border-b border-slate-100 p-4 text-slate-500"
                                         >
                                             {quiz.question}
                                         </td>
-                                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"
+                                        <td className="border-b border-slate-100 p-4 pr-8 text-slate-500"
                                         >
                                             <Link
                                                 to={`/quiz/${quiz.slug}`}
@@ -60,7 +50,7 @@ export default function QuizAdminIndex() {
                                                 Quiz Link
                                             </Link>
                                         </td>
-                                        <td className="border-b border-slate-100 dark:border-slate-700 p-4 pr-8 text-slate-500 dark:text-slate-400"
+                                        <td className="border-b border-slate-100 p-4 pr-8 text-slate-500"
                                         >
                                             <Link 
                                                 to={`/quiz/${quiz.slug}/results`}
